@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int A, B, C, D;
+		int res;
+		
+		A = sc.nextInt();
+		B = sc.nextInt();
+		C = sc.nextInt();
+		
+		res = 0;
+		
+//		if (A == B && B == C) {
+//			res = 10000 + A * 1000;
+//		} else if (A == B) {
+//			res = 1000 + A * 100;
+//		} else if (A == C) {
+//			res = 1000 + A * 100;
+//		} else if (B == C) {
+//			res = 1000 + B * 100;
+//		} else {
+//			if (A > B && A > C) {
+//				res = A * 100;
+//			} else if (B > A && B > C) {
+//				res = B * 100;
+//			} else {
+//				res = C * 100;
+//			}
+//		}
+		
+		if (A == B && B == C) {
+			res = 10000 + A * 1000;
+		} else if (A == B || A == C) {
+			res = 1000 + A * 100;
+		} else if (B == C) {
+			res = 1000 + B * 100;
+		} else {
+			int max = A;
+			if (A < B) {
+				max = B;
+				if (B < C) {
+					max = C;
+				}
+			} else if (max < C) {
+				max = C;
+			}
+			res = max * 100;
+		}
+		System.out.println(res);
+	}
+}
