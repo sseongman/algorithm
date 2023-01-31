@@ -29,6 +29,8 @@ public class Main {
 				cnt++;
 			}
 		}
-		System.out.println(cnt);
+		bw.write(cnt+"\n");
+		bw.flush();
+		bw.close();
 	}
 }
